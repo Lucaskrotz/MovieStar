@@ -6,7 +6,7 @@
         <div class="row" id="auth-row">
             <div class="col-md-4" id="login-container">
                 <h2>Entrar</h2>
-                <form action="" method="POST">
+                <form action="<?= $BASE_URL ?>auth_process.php" method="POST">
                     <input type="hidden" name="type" value="login">
                     <div class="form-group">
                         <label for="email">E-mail</label>
@@ -37,11 +37,11 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Senha:</label>
-                    <input type="password" class="form-control" id="email" name="password" placeholder="Digite sua senha">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha">
                 </div>
                 <div class="form-group">
                     <label for="confirmpassword">Confirmação de Senha:</label>
-                    <input type="confirmpassword"" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirme a sua senha">
+                    <input type="confirmpassword" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirme a sua senha">
                  </div>
                  <input type="submit" class="btn card-btn" value="Registrar">
                </form> 
