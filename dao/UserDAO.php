@@ -157,7 +157,7 @@
         public function findByEmail($email) {
 
             if($email != ""){
-                $stmt = $this->conn->prepare("SELECT * FROM  users WHERE email = :email");
+                $stmt = $this->conn->prepare("SELECT * FROM users WHERE email = :email");
 
                 $stmt->bindParam(":email", $email);
 
@@ -186,7 +186,7 @@
 
             
             if($token != ""){
-                $stmt = $this->conn->prepare("SELECT * FROM  users WHERE token = :token");
+                $stmt = $this->conn->prepare("SELECT * FROM users WHERE token = :token");
 
                 $stmt->bindParam(":token", $token);
 
