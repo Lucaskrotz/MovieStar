@@ -32,7 +32,7 @@
 
         public function create(User $user, $authUser = false) {
 
-            $stmt =  $this->conn->prepare("INSERT INTO users2(
+            $stmt =  $this->conn->prepare("INSERT INTO users (
                 name, lastname, email, password, token
             ) VALUES (:name, :lastname, :email, :password, :token)");
 
@@ -54,7 +54,7 @@
 
         public function update(User $user, $redirect = true) {
 
-            $stmt = $this->conn->prepare("UPDATE users2 SET
+            $stmt = $this->conn->prepare("UPDATE users SET
             
             name = :name,
             lastname = :lastname,
@@ -157,7 +157,7 @@
         public function findByEmail($email) {
 
             if($email != ""){
-                $stmt = $this->conn->prepare("SELECT * FROM  users2 WHERE email = :email");
+                $stmt = $this->conn->prepare("SELECT * FROM  users WHERE email = :email");
 
                 $stmt->bindParam(":email", $email);
 
@@ -186,7 +186,7 @@
 
             
             if($token != ""){
-                $stmt = $this->conn->prepare("SELECT * FROM  users2 WHERE token = :token");
+                $stmt = $this->conn->prepare("SELECT * FROM  users WHERE token = :token");
 
                 $stmt->bindParam(":token", $token);
 
@@ -220,7 +220,7 @@
 
         public function changePassword(User $user) {
 
-            $stmt = $this->conn->prepare("UPDATE users2 SET password = :password WHERE id = :id");
+            $stmt = $this->conn->prepare("UPDATE users SET password = :password WHERE id = :id");
 
             $stmt->bindParam("password", $user->password);
             $stmt->bindParam(":id", $user->id);

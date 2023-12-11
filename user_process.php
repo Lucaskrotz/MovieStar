@@ -53,7 +53,7 @@ $type = filter_input(INPUT_POST, "type");
             if(in_array($image["type"], $imageTypes)) {
 
                 // Chegar se jpg
-                if(in_array($image, $jpgArray)) {
+                if(in_array($image["type"], $jpgArray)) {
 
                     $imageFile = imagecreatefromjpeg($image["tmp_name"]);
 
